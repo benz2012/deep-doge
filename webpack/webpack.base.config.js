@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(process.cwd(), 'public'),
-    publicPath: `/`,
+    publicPath: '/',
   },
   module: {
     rules: [

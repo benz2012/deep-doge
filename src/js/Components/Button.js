@@ -1,12 +1,22 @@
 import styled from 'styled-components'
 
 const Button = styled.button`
-  width: 100%;
+  border: none;
+  color: inherit;
 
-  font: Courier;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  padding: 4vw;
+
+  font-family: "Courier New", monospace;
+  font-size: 1.2rem;
+  background-color: ${props => props.color};
 
   ${props => props.outlined && `
-    background-color: none;
+    background-color: transparent;
+    color: ${props.color};
     border: 1px solid ${props.color};
   `}
 `
