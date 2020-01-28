@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/classify", "destination": "/index.html" }
+  ]
+}
