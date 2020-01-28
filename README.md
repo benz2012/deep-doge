@@ -1,4 +1,4 @@
-# Doggo Classifier
+# Deep Doge
 
 Using machine learning, humans can now quickly learn what type of doggo they are looking at.
 
