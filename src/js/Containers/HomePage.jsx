@@ -1,33 +1,39 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 
 import Page from '../Components/Page'
 import Content from '../Components/Content'
-import AppBar from '../Components/AppBar'
 import DoggoDisplay from '../Components/DoggoDisplay'
 import Button from '../Components/Button'
 import FloatingButton from '../Components/FloatingButton'
 import { H1, Line } from '../Components/Typography'
 
 const HomePage = () => {
-  const startingDoggo = {
-    image: 'https://random.dog.com/1',
-    label: 'Fluffer',
-    confidence: 96,
-  }
+  const [randDoggoImg, setRandDoggoImg] = useState('')
+  useEffect(() => {
+    fetch('https://dog.ceo/api/breeds/image/random')
+      .then(response => response.json())
+      .then((data) => {
+        setRandDoggoImg(data.message)
+      })
+  }, [])
 
   return (
     <Fragment>
-      <AppBar>Doggo Classifier</AppBar>
-
       <Page>
         <Content>
-          <DoggoDisplay {...startingDoggo} />
+          <DoggoDisplay image={randDoggoImg} label="Fluffer" confidence={96} />
         </Content>
 
         <Line />
 
         <Content>
-          <Button color="rgb(255, 214, 0)" outlined>Help us Classify {'>'}</Button>
+          <Button
+            onClick={() => { window.location.assign('/classify') }}
+            color="rgb(255, 214, 0)"
+            outlined
+          >
+            Help us Classify {'>'}
+          </Button>
         </Content>
 
         <Line />
@@ -35,44 +41,15 @@ const HomePage = () => {
         <Content>
           <H1>What&apos;s a Doggo?</H1>
           <p>
-            Lorem ipsum... etc.
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
-            dslkmksdfkl lksdl ksfdl skd klfm lksdm flksmd lksmd lkmdlkm sdlkm lsk
+            <em>TL;DR a Doggo is a Dog</em>
+          </p>
+          <p>
+            DoggoLingo, also referred to as woof, bork and dog-speak, is an
+            internet language that is created from word conversion, meme
+            lexicon, and onomatopoeia. DoggoLingo is implied to be a dog&apos;s
+            own idiom, and is presented as what humans have long believed goes
+            on in the canine brain.&nbsp;
+            <a href="https://en.wikipedia.org/wiki/DoggoLingo">Wikipedia</a>
           </p>
         </Content>
       </Page>

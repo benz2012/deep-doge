@@ -18,7 +18,7 @@ const Container = styled.header`
 `
 
 const AppBar = ({ children }) => (
-  <Container>
+  <Container onClick={() => { window.location.assign('/') }}>
     <H2>{children}</H2>
   </Container>
 )

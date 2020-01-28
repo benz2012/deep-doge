@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import DoggoImage from './DoggoImage'
 import { H3, Subtitle } from './Typography'
 
 const Container = styled.div`
@@ -9,19 +10,9 @@ const Container = styled.div`
   align-items: center;
 `
 
-const Feature = styled.div`
-  width: 90vw;
-  height: 90vw;
-  margin-top: 5vw;
-
-  border-radius: 6px;
-  background-color: rgb(255, 214, 0);
-`
-
 const DoggoDisplay = ({ image, label, confidence }) => (
   <Container>
-    {/* <img src={image} /> */}
-    <Feature />
+    <DoggoImage src={image} />
     <H3 style={{ marginBottom: '0.3rem' }}>
       This is a&nbsp;
       {label !== '' ? label : '________'}

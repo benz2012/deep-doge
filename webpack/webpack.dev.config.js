@@ -11,4 +11,7 @@ module.exports = merge(baseConfig, {
     filename: 'bundle.dev.js',
   },
   devtool: 'inline-source-map',
+  devServer: {
+    historyApiFallback: true,
+  },
 })
